@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        service: {
+          software: "hsl(var(--service-software))",
+          web: "hsl(var(--service-web))",
+          design: "hsl(var(--service-design))",
+          hosting: "hsl(var(--service-hosting))",
+        },
+        badge: {
+          blue: "hsl(var(--badge-blue))",
+          teal: "hsl(var(--badge-teal))",
+          orange: "hsl(var(--badge-orange))",
+          red: "hsl(var(--badge-red))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
