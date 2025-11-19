@@ -1,4 +1,5 @@
 import ServiceCard from "@/components/ServiceCard";
+import Navigation from "@/components/Navigation";
 import dottedPattern from "@/assets/dotted-pattern.png";
 
 const Index = () => {
@@ -60,8 +61,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">
-      <main className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
             Our Key Services
