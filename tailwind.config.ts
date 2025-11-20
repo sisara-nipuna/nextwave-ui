@@ -69,6 +69,16 @@ export default {
           orange: "hsl(var(--badge-orange))",
           red: "hsl(var(--badge-red))",
         },
+        contact: {
+          gradient: {
+            start: "hsl(var(--contact-gradient-start))",
+            end: "hsl(var(--contact-gradient-end))",
+          },
+          accent: "hsl(var(--contact-accent))",
+          "accent-light": "hsl(var(--contact-accent-light))",
+          card: "hsl(var(--contact-card))",
+          shadow: "hsl(var(--contact-shadow))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

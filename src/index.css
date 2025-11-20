@@ -49,6 +49,14 @@ All colors MUST be HSL.
     --badge-teal: 170 50% 35%;
     --badge-orange: 25 95% 55%;
     --badge-red: 0 70% 55%;
+    
+    /* Contact page colors */
+    --contact-gradient-start: 220 100% 97%;
+    --contact-gradient-end: 260 100% 98%;
+    --contact-accent: 220 90% 56%;
+    --contact-accent-light: 220 100% 95%;
+    --contact-card: 0 0% 100%;
+    --contact-shadow: 220 50% 80%;
 
     --sidebar-background: 0 0% 98%;
 
