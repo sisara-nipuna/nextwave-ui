@@ -1,39 +1,61 @@
+import { MapPin } from "lucide-react";
+
 const GlobalFootprint = () => {
+  const locations = [
+    {
+      city: "Melbourne",
+      country: "Australia",
+      gradient: "from-blue-500 via-purple-500 to-pink-500",
+    },
+    {
+      city: "Singapore",
+      country: "Singapore",
+      gradient: "from-green-500 via-teal-500 to-blue-500",
+    },
+    {
+      city: "Colombo",
+      country: "Sri Lanka",
+      gradient: "from-orange-500 via-red-500 to-pink-500",
+    },
+  ];
+
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-contact-accent-light/30">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">
-          Expanding Our Global
-          <br />
-          Footprint
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Our Global Footprint
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Serving clients across multiple continents with local expertise
+          </p>
+        </div>
 
-        <p className="text-center text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
-          We are proudly headquartered in Melbourne, a vibrant city that fuels our creativity and drives our commitment to
-          innovation. Beyond our home base, we have established a strong presence in key locations, including Australia,
-          Singapore, and Colombo. These strategic locations enable us to stay at the forefront of technological
-          advancements, collaborate seamlessly across borders, and deliver exceptional solutions to clients worldwide. Our
-          global reach empowers us to adapt to diverse market needs, foster innovation, and create a lasting impact in the
-          industries we serve.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {locations.map((location, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-contact-accent/20 transition-all duration-500 hover:-translate-y-2"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${location.gradient} opacity-90`}></div>
+              <div className="absolute inset-0 bg-[url('/src/assets/dotted-pattern.png')] opacity-20"></div>
+              
+              <div className="relative p-8 h-64 flex flex-col justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                
+                <div className="text-white">
+                  <h3 className="text-3xl font-bold mb-2">{location.city}</h3>
+                  <p className="text-white/90 text-lg">{location.country}</p>
+                </div>
 
-        {/* City Images Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="aspect-[4/3] bg-gradient-to-br from-amber-900/20 to-amber-600/10 rounded-lg overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Melbourne</span>
+                <div className="absolute top-4 right-4 w-32 h-32 rounded-full bg-white/10 blur-3xl"></div>
+              </div>
             </div>
-          </div>
-          <div className="aspect-[4/3] bg-gradient-to-br from-blue-900/20 to-purple-600/10 rounded-lg overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Singapore</span>
-            </div>
-          </div>
-          <div className="aspect-[4/3] bg-gradient-to-br from-cyan-900/20 to-blue-600/10 rounded-lg overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Colombo</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
