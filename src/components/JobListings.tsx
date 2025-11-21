@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Search, ArrowRight } from "lucide-react";
 import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 import ApplicationForm from "./ApplicationForm";
+import JobPoster from "./JobPoster";
 
 interface Job {
   id: string;
@@ -15,7 +17,8 @@ const JobListings = () => {
   const [activeTab, setActiveTab] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isPosterOpen, setIsPosterOpen] = useState(false);
+  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
 
   const jobs: Job[] = [
     {
@@ -78,11 +81,7 @@ const JobListings = () => {
         {filteredJobs.map((job) => (
           <div
             key={job.id}
-            onClick={() => {
-              setSelectedJob(job);
-              setIsDialogOpen(true);
-            }}
-            className="bg-background rounded-lg p-6 flex items-center justify-between hover:shadow-md transition-shadow group cursor-pointer"
+            className="bg-background rounded-lg p-6 flex items-center justify-between hover:shadow-md transition-shadow group"
           >
             <div className="flex items-center gap-8 flex-1">
               <h3 className="text-lg font-semibold text-foreground min-w-[200px]">
@@ -91,18 +90,39 @@ const JobListings = () => {
               <span className="text-muted-foreground">{job.experience}</span>
               <span className="text-muted-foreground">{job.date}</span>
             </div>
-            <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+            <Button
+              onClick={() => {
+                setSelectedJob(job);
+                setIsPosterOpen(true);
+              }}
+              variant="outline"
+              className="gap-2"
+            >
+              View Details
+              <ArrowRight className="w-4 h-4" />
+            </Button>
           </div>
         ))}
       </div>
 
-      {/* Application Form Dialog */}
+      {/* Job Poster Dialog */}
       {selectedJob && (
-        <ApplicationForm
-          open={isDialogOpen}
-          onOpenChange={setIsDialogOpen}
-          jobTitle={selectedJob.title}
-        />
+        <>
+          <JobPoster
+            open={isPosterOpen}
+            onOpenChange={setIsPosterOpen}
+            jobTitle={selectedJob.title}
+            experience={selectedJob.experience}
+            date={selectedJob.date}
+            category={selectedJob.category}
+            onApplyClick={() => setIsApplicationOpen(true)}
+          />
+          <ApplicationForm
+            open={isApplicationOpen}
+            onOpenChange={setIsApplicationOpen}
+            jobTitle={selectedJob.title}
+          />
+        </>
       )}
     </div>
   );
