@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import BenefitCard from "@/components/BenefitCard";
 import PhotoGallery from "@/components/PhotoGallery";
-import SocialLinks from "@/components/SocialLinks";
 import JobListings from "@/components/JobListings";
 import { Users, Shield, GraduationCap, TrendingUp } from "lucide-react";
 
@@ -62,11 +61,8 @@ const Careers = () => {
             </div>
           </div>
 
-          {/* Photo Gallery */}
+          {/* Photo Gallery with Social Links */}
           <PhotoGallery />
-
-          {/* Social Links */}
-          <SocialLinks />
 
           {/* Career Openings */}
           <div className="mb-12">
