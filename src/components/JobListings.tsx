@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, ArrowRight } from "lucide-react";
 import { Input } from "./ui/input";
+import ApplicationForm from "./ApplicationForm";
 
 interface Job {
   id: string;
@@ -13,6 +14,8 @@ interface Job {
 const JobListings = () => {
   const [activeTab, setActiveTab] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const jobs: Job[] = [
     {
@@ -75,6 +78,10 @@ const JobListings = () => {
         {filteredJobs.map((job) => (
           <div
             key={job.id}
+            onClick={() => {
+              setSelectedJob(job);
+              setIsDialogOpen(true);
+            }}
             className="bg-background rounded-lg p-6 flex items-center justify-between hover:shadow-md transition-shadow group cursor-pointer"
           >
             <div className="flex items-center gap-8 flex-1">
@@ -88,6 +95,15 @@ const JobListings = () => {
           </div>
         ))}
       </div>
+
+      {/* Application Form Dialog */}
+      {selectedJob && (
+        <ApplicationForm
+          open={isDialogOpen}
+          onOpenChange={setIsDialogOpen}
+          jobTitle={selectedJob.title}
+        />
+      )}
     </div>
   );
 };
