@@ -1,103 +1,179 @@
-import ServiceCard from "@/components/ServiceCard";
 import Navigation from "@/components/Navigation";
-import dottedPattern from "@/assets/dotted-pattern.png";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
+import SectionHeader from "@/components/SectionHeader";
+import SkillCard from "@/components/SkillCard";
+import ProjectCard from "@/components/ProjectCard";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Code2, Server, Cloud, Database, Network, Shield } from "lucide-react";
+
+const featuredSkills = [
+  { name: "React / Next.js", icon: Code2, level: 95, category: "Frontend" },
+  { name: "Node.js", icon: Server, level: 90, category: "Backend" },
+  { name: "Cloud Architecture", icon: Cloud, level: 85, category: "DevOps" },
+  { name: "Network Design", icon: Network, level: 88, category: "Infrastructure" },
+];
+
+const featuredProjects = [
+  {
+    title: "Enterprise Network Infrastructure",
+    description: "Designed and implemented a scalable network architecture for a Fortune 500 company, improving throughput by 300%.",
+    tags: ["Cisco", "VLAN", "BGP", "Security"],
+    featured: true,
+  },
+  {
+    title: "Cloud-Native Application Platform",
+    description: "Built a microservices platform using Kubernetes and Docker, serving 1M+ daily active users.",
+    tags: ["Kubernetes", "Docker", "AWS", "Go"],
+  },
+  {
+    title: "Real-time Analytics Dashboard",
+    description: "Full-stack analytics solution with real-time data processing and interactive visualizations.",
+    tags: ["React", "Node.js", "PostgreSQL", "WebSocket"],
+  },
+];
 
 const Index = () => {
-  const services = [
-    {
-      title: "Software Development",
-      description:
-        "We offer customized software development services to help businesses streamline operations and improve productivity. Our expertise includes:",
-      badges: [
-        { text: "Call Center Software Solutions", color: "blue" as const },
-        { text: "Attendance & Payroll Software", color: "blue" as const },
-        { text: "School Management System", color: "blue" as const },
-        { text: "Tour Management Software", color: "blue" as const },
-        { text: "Library Accounting System", color: "blue" as const },
-      ],
-      backgroundColor: "bg-service-software",
-      imagePosition: "left" as const,
-    },
-    {
-      title: "Web Development",
-      description:
-        "Build a powerful online presence with our expert web development services. We create:",
-      badges: [
-        { text: "Business Website Solutions", color: "teal" as const },
-        { text: "E-commerce Platforms", color: "teal" as const },
-      ],
-      backgroundColor: "bg-service-web",
-      imagePosition: "right" as const,
-    },
-    {
-      title: "UX & Product Designs",
-      description:
-        "We craft user-centric designs that blend functionality with beauty, ensuring seamless and intuitive experiences from wireframes to final design.",
-      badges: [
-        { text: "User Research", color: "orange" as const },
-        { text: "UI/UX Kit", color: "orange" as const },
-        { text: "Prototyping", color: "orange" as const },
-        { text: "Design Systems", color: "orange" as const },
-        { text: "Branding", color: "orange" as const },
-      ],
-      backgroundColor: "bg-service-design",
-      imagePosition: "left" as const,
-    },
-    {
-      title: "Web Hosting Solutions",
-      description:
-        "We specialize in providing web hosting solutions for all types of websites. Irrespective of whether you have a brand new blog, a high traffic website or if you own an e-commerce website.",
-      badges: [
-        { text: "Domain", color: "red" as const },
-        { text: "Database", color: "red" as const },
-        { text: "Plan", color: "red" as const },
-        { text: "WordPress", color: "red" as const },
-        { text: "Database", color: "red" as const },
-        { text: "Email", color: "red" as const },
-      ],
-      backgroundColor: "bg-service-hosting",
-      imagePosition: "right" as const,
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-            Our Key Services
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            At Sisars Corporation, we provide a comprehensive range of software solutions tailored to
-            meet your business needs. With over 19 years of experience in the industry, we specialize in
-            delivering cutting-edge technology solutions that drive efficiency, growth, and innovation.
-          </p>
-        </header>
+      
+      {/* Hero Section */}
+      <Hero />
 
-        <section className="space-y-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              badges={service.badges}
-              backgroundColor={service.backgroundColor}
-              imageContent={
-                <div className="relative w-full h-[280px] flex items-center justify-center">
-                  <img
-                    src={dottedPattern}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-contain opacity-50"
-                    aria-hidden="true"
-                  />
+      {/* About Preview Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <SectionHeader title="About Me" align="left" />
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                With over 5 years of experience in software engineering and network architecture, 
+                I specialize in building robust, scalable solutions that bridge the gap between 
+                application development and infrastructure design.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                My expertise spans from crafting elegant frontend experiences to designing 
+                enterprise-grade network topologies. I'm passionate about clean code, 
+                system reliability, and continuous learning.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <div className="glass-card px-6 py-4 text-center">
+                  <div className="text-3xl font-bold text-primary">5+</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
-              }
-              imagePosition={service.imagePosition}
-            />
-          ))}
-        </section>
-      </main>
+                <div className="glass-card px-6 py-4 text-center">
+                  <div className="text-3xl font-bold text-primary">50+</div>
+                  <div className="text-sm text-muted-foreground">Projects Completed</div>
+                </div>
+                <div className="glass-card px-6 py-4 text-center">
+                  <div className="text-3xl font-bold text-primary">20+</div>
+                  <div className="text-sm text-muted-foreground">Certifications</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Tech Stack Visual */}
+            <div className="relative">
+              <div className="glass-card p-8">
+                <div className="grid grid-cols-3 gap-4">
+                  {[Code2, Server, Database, Cloud, Network, Shield].map((Icon, index) => (
+                    <div
+                      key={index}
+                      className="aspect-square rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center group hover:from-primary/20 hover:to-secondary/20 transition-all duration-300"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <Icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-2xl" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Preview Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 grid-bg opacity-50" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <SectionHeader 
+            title="Core Skills" 
+            subtitle="Technologies and tools I work with daily"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {featuredSkills.map((skill, index) => (
+              <SkillCard
+                key={skill.name}
+                {...skill}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              />
+            ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" className="border-glass-border hover:bg-muted/50">
+              <Link to="/skills">
+                View All Skills <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Preview Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader 
+            title="Featured Projects" 
+            subtitle="A selection of my recent work"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {featuredProjects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                {...project}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              />
+            ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" className="border-glass-border hover:bg-muted/50">
+              <Link to="/projects">
+                View All Projects <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-card p-12 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Let's Build Something <span className="neon-text">Amazing</span>
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+                Have a project in mind? I'm always open to discussing new opportunities 
+                and interesting challenges.
+              </p>
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-primary-foreground font-semibold px-8">
+                <Link to="/contact">Get In Touch</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
