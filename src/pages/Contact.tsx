@@ -13,19 +13,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "your@email.com",
-    href: "mailto:your@email.com",
+    value: "nipunamahaliyana@gmail.com",
+    href: "mailto:nipunamahaliyana@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+94715896347",
+    href: "tel:+94715896347",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "No 9A,Nallagoda road,Walipanna,Mathugama,Sri Lanka",
     href: null,
   },
 ];

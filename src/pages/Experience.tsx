@@ -6,72 +6,40 @@ import { GraduationCap, Award } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior Software Engineer",
-    company: "Tech Giant Corp",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
-    description: [
-      "Lead development of microservices architecture serving 5M+ users",
-      "Architected and deployed cloud-native solutions on AWS",
-      "Mentored team of 5 junior developers",
-      "Reduced system latency by 40% through optimization",
-    ],
-    technologies: ["React", "Node.js", "AWS", "Kubernetes", "PostgreSQL"],
-  },
-  {
-    title: "Network Engineer",
-    company: "Global Networks Inc",
-    location: "New York, NY",
-    period: "2020 - 2022",
+    title: "Backend and Systems Developer",
+    company: "Sisara Corporation Pvt Ltd",
+    location: "Pannipitiya,Maharagama Sri Lanka",
+    period: "2025 January - December",
     description: [
       "Designed and implemented enterprise network infrastructure",
-      "Managed SD-WAN deployment across 100+ locations",
-      "Implemented security protocols reducing incidents by 60%",
-      "Led network migration to cloud-based solutions",
+      "Developed backend services and APIs for internal tools",
+      "Optimized system performance and scalability",
+      "Collaborated with cross-functional teams to deliver solutions",
     ],
-    technologies: ["Cisco", "Juniper", "Palo Alto", "SD-WAN", "BGP"],
+    technologies: ["Cisco", "Fortinet FortiGate ", "Springboot", "React JS", "MySQL"],
   },
   {
-    title: "Full Stack Developer",
-    company: "Startup Innovations",
-    location: "Austin, TX",
-    period: "2018 - 2020",
+    title: "Software Engineer Intern",
+    company: "Sri Lanka Telecom Mobitel (Pvt) Ltd",
+    location: "Colombo, Sri Lanka",
+    period: "2024 April - October",
     description: [
       "Built full-stack web applications from scratch",
       "Developed RESTful APIs and GraphQL endpoints",
       "Implemented CI/CD pipelines for automated deployments",
       "Collaborated with cross-functional teams in agile environment",
     ],
-    technologies: ["React", "Python", "Docker", "MongoDB", "Redis"],
-  },
-  {
-    title: "Junior Developer & IT Support",
-    company: "Local Tech Solutions",
-    location: "Remote",
-    period: "2017 - 2018",
-    description: [
-      "Developed internal tools and automation scripts",
-      "Provided technical support and troubleshooting",
-      "Managed network infrastructure for small businesses",
-      "Created documentation and training materials",
-    ],
-    technologies: ["JavaScript", "Python", "Linux", "Networking"],
+    technologies: ["React", ".NET Framework", "MSSQL", "Azure"],
   },
 ];
 
 const education = [
   {
-    degree: "Master of Science in Computer Science",
-    school: "Stanford University",
-    year: "2019",
-    focus: "Distributed Systems & Network Security",
-  },
-  {
-    degree: "Bachelor of Science in Computer Engineering",
-    school: "MIT",
-    year: "2017",
-    focus: "Software Engineering & Computer Networks",
-  },
+    degree: "Bachelor of Science Honors in Information Technology",
+    school: "University of Jaffna",
+    year: "2020-2024",
+    focus: "Software Engineering & Advanced Computer Networks",
+  }
 ];
 
 const Experience = () => {

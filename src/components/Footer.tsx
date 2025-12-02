@@ -15,8 +15,8 @@ const Footer = () => {
                 <Terminal className="w-5 h-5 text-background" />
               </div>
               <span className="text-xl font-bold">
-                <span className="text-foreground">Dev</span>
-                <span className="text-primary">Portfolio</span>
+                <span className="text-foreground">Nipuna</span>
+                <span className="text-primary">Mahaliyana</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-md">

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { NavLink } from "./NavLink";
 
 const Navigation = () => {
   return (
@@ -7,15 +6,20 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-xl font-bold text-foreground">
-            Sisars Corporation
+            Nipuna Mahaliyana
           </Link>
-          
-          <div className="flex gap-6">
-            <NavLink to="/">Services</NavLink>
-            <NavLink to="/careers">Careers</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-          </div>
+          <ul className="space-y-2 flex flex-col sm:flex-row sm:space-y-0 sm:space-x-6">
+              {["Home", "Projects", "Skills", "Experience", "Contact"].map((item) => (
+                <li key={item}>
+                  <Link
+                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
         </div>
       </div>
     </nav>

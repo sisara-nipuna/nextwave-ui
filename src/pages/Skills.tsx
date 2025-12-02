@@ -21,52 +21,44 @@ const skillCategories = [
   {
     title: "Programming Languages",
     skills: [
+      { name: "Java/Springboot", icon: Code2, level: 95, category: "Language" },
       { name: "TypeScript / JavaScript", icon: Code2, level: 95, category: "Language" },
       { name: "Python", icon: Terminal, level: 90, category: "Language" },
-      { name: "Go", icon: Terminal, level: 80, category: "Language" },
-      { name: "Rust", icon: Cpu, level: 70, category: "Language" },
+      { name: "C#", icon: Terminal, level: 90, category: "Language" },
     ],
   },
   {
     title: "Frontend Development",
     skills: [
       { name: "React / Next.js", icon: Code2, level: 95, category: "Frontend" },
-      { name: "Vue.js", icon: Code2, level: 85, category: "Frontend" },
       { name: "Tailwind CSS", icon: Layers, level: 90, category: "Frontend" },
-      { name: "React Native", icon: Globe, level: 80, category: "Frontend" },
     ],
   },
   {
     title: "Backend Development",
     skills: [
-      { name: "Node.js / Express", icon: Server, level: 92, category: "Backend" },
-      { name: "GraphQL", icon: Database, level: 85, category: "Backend" },
-      { name: "PostgreSQL", icon: Database, level: 88, category: "Backend" },
-      { name: "MongoDB", icon: Database, level: 85, category: "Backend" },
+      { name: "Java/Springboot", icon: Server, level: 92, category: "Backend" },
+      { name: "MySQL", icon: Database, level: 88, category: "Backend" },
     ],
   },
   {
     title: "Cloud & DevOps",
     skills: [
       { name: "AWS", icon: Cloud, level: 90, category: "Cloud" },
-      { name: "Docker / Kubernetes", icon: Layers, level: 88, category: "DevOps" },
+      { name: "Docker", icon: Layers, level: 88, category: "DevOps" },
       { name: "CI/CD Pipelines", icon: GitBranch, level: 92, category: "DevOps" },
-      { name: "Terraform", icon: Cloud, level: 80, category: "IaC" },
     ],
   },
   {
     title: "Networking",
     skills: [
-      { name: "Cisco (CCNA/CCNP)", icon: Network, level: 92, category: "Network" },
+      { name: "Cisco (CCNA)", icon: Network, level: 92, category: "Network" },
       { name: "Network Security", icon: Shield, level: 88, category: "Security" },
-      { name: "SD-WAN / VPN", icon: Lock, level: 85, category: "Network" },
-      { name: "Load Balancing", icon: Layers, level: 87, category: "Network" },
     ],
   },
   {
     title: "Security",
     skills: [
-      { name: "Penetration Testing", icon: Shield, level: 80, category: "Security" },
       { name: "Firewall Management", icon: Lock, level: 88, category: "Security" },
       { name: "Security Auditing", icon: Shield, level: 85, category: "Security" },
       { name: "SSL/TLS", icon: Lock, level: 90, category: "Security" },
@@ -75,12 +67,7 @@ const skillCategories = [
 ];
 
 const certifications = [
-  "AWS Solutions Architect Professional",
-  "Cisco CCNP Enterprise",
-  "Kubernetes Administrator (CKA)",
-  "CompTIA Security+",
-  "Google Cloud Professional",
-  "HashiCorp Terraform Associate",
+  "Cisco CCNA",
 ];
 
 const Skills = () => {

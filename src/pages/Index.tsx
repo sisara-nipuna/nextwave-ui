@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code2, Server, Cloud, Database, Network, Shield } from "lucide-react";
 
 const featuredSkills = [
+  { name: "Java/Springboot", icon: Server, level: 90, category: "Backend" },
   { name: "React / Next.js", icon: Code2, level: 95, category: "Frontend" },
-  { name: "Node.js", icon: Server, level: 90, category: "Backend" },
   { name: "Cloud Architecture", icon: Cloud, level: 85, category: "DevOps" },
   { name: "Network Design", icon: Network, level: 88, category: "Infrastructure" },
 ];
@@ -49,7 +49,7 @@ const Index = () => {
             <div className="space-y-6">
               <SectionHeader title="About Me" align="left" />
               <p className="text-muted-foreground text-lg leading-relaxed">
-                With over 5 years of experience in software engineering and network architecture, 
+                With over 1 years of experience in software engineering and network architecture, 
                 I specialize in building robust, scalable solutions that bridge the gap between 
                 application development and infrastructure design.
               </p>
@@ -60,15 +60,15 @@ const Index = () => {
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="glass-card px-6 py-4 text-center">
-                  <div className="text-3xl font-bold text-primary">5+</div>
+                  <div className="text-3xl font-bold text-primary">1+</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="glass-card px-6 py-4 text-center">
-                  <div className="text-3xl font-bold text-primary">50+</div>
+                  <div className="text-3xl font-bold text-primary">5+</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </div>
                 <div className="glass-card px-6 py-4 text-center">
-                  <div className="text-3xl font-bold text-primary">20+</div>
+                  <div className="text-3xl font-bold text-primary">5+</div>
                   <div className="text-sm text-muted-foreground">Certifications</div>
                 </div>
               </div>

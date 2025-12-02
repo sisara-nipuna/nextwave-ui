@@ -20,7 +20,7 @@ const Hero = () => {
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <span className="text-foreground">Hi, I'm </span>
-          <span className="neon-text">Your Name</span>
+          <span className="neon-text">Nipuna Mahaliyana</span>
         </h1>
 
         {/* Subtitle with typing effect style */}
