@@ -1,9 +1,15 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
+import AnimatedSection from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
+
+import projectNetwork from "@/assets/project-network.jpg";
+import projectCloud from "@/assets/project-cloud.jpg";
+import projectAnalytics from "@/assets/project-analytics.jpg";
 
 const categories = ["All", "Web Development", "Network", "Cloud", "Mobile"];
 
@@ -14,6 +20,7 @@ const projects = [
     tags: ["Cisco", "VLAN", "BGP", "Security", "Load Balancing"],
     category: "Network",
     featured: true,
+    image: projectNetwork,
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
   },
@@ -23,6 +30,7 @@ const projects = [
     tags: ["Kubernetes", "Docker", "AWS", "Go", "Terraform"],
     category: "Cloud",
     featured: true,
+    image: projectCloud,
     githubUrl: "https://github.com",
   },
   {
@@ -30,6 +38,7 @@ const projects = [
     description: "Full-stack analytics solution with real-time data processing and interactive visualizations for business intelligence.",
     tags: ["React", "Node.js", "PostgreSQL", "WebSocket", "D3.js"],
     category: "Web Development",
+    image: projectAnalytics,
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
   },
@@ -70,6 +79,28 @@ const projects = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -83,47 +114,58 @@ const Projects = () => {
       
       <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <SectionHeader
-            title="My Projects"
-            subtitle="A collection of projects I've worked on, ranging from web applications to network infrastructure"
-          />
+          <AnimatedSection>
+            <SectionHeader
+              title="My Projects"
+              subtitle="A collection of projects I've worked on, ranging from web applications to network infrastructure"
+            />
+          </AnimatedSection>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
-                  activeCategory === category
-                    ? "bg-gradient-to-r from-primary to-secondary text-primary-foreground"
-                    : "glass-card text-muted-foreground hover:text-foreground hover:border-primary/50"
-                )}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+          <AnimatedSection delay={0.2}>
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
+              {categories.map((category) => (
+                <motion.button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={cn(
+                    "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
+                    activeCategory === category
+                      ? "bg-gradient-to-r from-primary to-secondary text-primary-foreground"
+                      : "glass-card text-muted-foreground hover:text-foreground hover:border-primary/50"
+                  )}
+                >
+                  {category}
+                </motion.button>
+              ))}
+            </div>
+          </AnimatedSection>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                {...project}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              />
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            key={activeCategory}
+          >
+            {filteredProjects.map((project) => (
+              <motion.div key={project.title} variants={itemVariants} layout>
+                <ProjectCard {...project} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">
-                No projects found in this category.
-              </p>
-            </div>
+            <AnimatedSection>
+              <div className="text-center py-20">
+                <p className="text-muted-foreground text-lg">
+                  No projects found in this category.
+                </p>
+              </div>
+            </AnimatedSection>
           )}
         </div>
       </main>
