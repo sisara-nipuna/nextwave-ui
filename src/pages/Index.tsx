@@ -229,8 +229,8 @@ const Index = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Let's Build Something <span className="neon-text">Amazing</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-4">
+                Let's Build Something <span className="text-primary">Amazing</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
                 Have a project in mind? I'm always open to discussing new opportunities 
