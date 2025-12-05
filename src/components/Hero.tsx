@@ -56,6 +56,7 @@ const Hero = () => {
             <span className="text-accent">Network_Specialist</span>
           </h2>
           <span className="text-muted-foreground">]</span>
+          <span className="text-primary">Love to Connect with 0.0.0.0</span>
         </motion.div>
 
         {/* Description */}

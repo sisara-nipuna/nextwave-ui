@@ -1,13 +1,14 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Download, FileText, ExternalLink } from "lucide-react";
+import MyResumePDF from "../assets/nipuna.pdf";
 
 interface ResumeViewerProps {
   resumeUrl?: string;
   className?: string;
 }
 
-const ResumeViewer = ({ resumeUrl = "/resume.pdf", className }: ResumeViewerProps) => {
+const ResumeViewer = ({ resumeUrl = MyResumePDF, className }: ResumeViewerProps) => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = resumeUrl;
@@ -59,7 +60,7 @@ const ResumeViewer = ({ resumeUrl = "/resume.pdf", className }: ResumeViewerProp
           <div className="flex-1 h-full min-h-0 mt-4">
             <iframe
               src={resumeUrl}
-              className="w-full h-full rounded-lg border border-glass-border bg-background"
+              className="w-full h-[60vh] rounded-lg border border-glass-border bg-background"
               title="Resume PDF"
             />
           </div>
