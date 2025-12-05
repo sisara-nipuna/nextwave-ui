@@ -47,14 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        glass: "hsl(var(--glass))",
-        "glass-border": "hsl(var(--glass-border))",
-        warm: {
-          terracotta: "hsl(var(--warm-terracotta))",
-          sand: "hsl(var(--warm-sand))",
-          cream: "hsl(var(--warm-cream))",
-          olive: "hsl(var(--warm-olive))",
-          clay: "hsl(var(--warm-clay))",
+        terminal: {
+          green: "hsl(var(--terminal-green))",
+          "green-dim": "hsl(var(--terminal-green-dim))",
+          amber: "hsl(var(--terminal-amber))",
+          cyan: "hsl(var(--terminal-cyan))",
+          magenta: "hsl(var(--terminal-magenta))",
+          black: "hsl(var(--terminal-black))",
+          gray: "hsl(var(--terminal-gray))",
+        },
+        glow: {
+          green: "hsl(var(--glow-green))",
         },
       },
       borderRadius: {
@@ -63,9 +66,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-        mono: ['DM Sans', 'monospace'],
+        sans: ['JetBrains Mono', 'monospace'],
+        serif: ['VT323', 'monospace'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       keyframes: {
         "accordion-down": {
@@ -93,8 +96,12 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "gentle-pulse": {
-          "0%, 100%": { boxShadow: "0 0 15px hsl(var(--primary) / 0.1)" },
-          "50%": { boxShadow: "0 0 30px hsl(var(--primary) / 0.2)" },
+          "0%, 100%": { boxShadow: "0 0 15px hsl(var(--primary) / 0.3)" },
+          "50%": { boxShadow: "0 0 30px hsl(var(--primary) / 0.5)" },
+        },
+        "terminal-glow": {
+          "0%, 100%": { textShadow: "0 0 10px hsl(var(--terminal-green)), 0 0 20px hsl(var(--terminal-green) / 0.5)" },
+          "50%": { textShadow: "0 0 20px hsl(var(--terminal-green)), 0 0 40px hsl(var(--terminal-green) / 0.7)" },
         },
       },
       animation: {
@@ -105,6 +112,7 @@ export default {
         "slide-in-right": "slide-in-right 0.6s ease-out forwards",
         "scale-in": "scale-in 0.5s ease-out forwards",
         "gentle-pulse": "gentle-pulse 3s ease-in-out infinite",
+        "terminal-glow": "terminal-glow 2s ease-in-out infinite",
       },
     },
   },
