@@ -47,16 +47,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center gap-3 mb-8 font-mono"
+          className="flex flex-col items-center justify-center gap-2 mb-8 font-mono"
         >
-          <span className="text-muted-foreground">[</span>
-          <h2 className="text-xl sm:text-2xl text-foreground">
-            <span className="text-primary">Software_Engineer</span>
-            <span className="mx-3 text-muted-foreground">|</span>
-            <span className="text-accent">Network_Specialist</span>
-          </h2>
-          <span className="text-muted-foreground">]</span>
-          <span className="text-primary">Love to Connect with 0.0.0.0</span>
+          <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3">
+            <span className="text-muted-foreground">[</span>
+            <h2 className="text-base sm:text-xl md:text-2xl text-foreground text-center">
+              <span className="text-primary">Software_Engineer</span>
+              <span className="mx-1 sm:mx-3 text-muted-foreground">|</span>
+              <span className="text-accent">Network_Specialist</span>
+            </h2>
+            <span className="text-muted-foreground">]</span>
+          </div>
+          <span className="text-primary text-sm sm:text-base">Love to Connect with 0.0.0.0</span>
         </motion.div>
 
         {/* Description */}
